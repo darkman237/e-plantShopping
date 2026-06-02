@@ -1,147 +1,253 @@
-/* LandingPage.css */
+/* ===========================
+   Paradise Nursery – App.css
+   =========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+/* ── Landing Page ── */
 .landing-page {
   position: relative;
-  width: 100vw;
-  height: 100vh;
-  background-color: #f8f8f8;
-}
-
-.background-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('https://cdn.pixabay.com/photo/2017/07/13/08/59/greenhouse-2499758_1280.jpg');
-  background-size: 100% 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image:
+    linear-gradient(to bottom, rgba(10, 28, 18, 0.60) 0%, rgba(20, 50, 32, 0.75) 100%),
+    url('https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=1600&q=80');
+  background-size: cover;
   background-position: center;
-  filter: brightness(0.8);
+  background-attachment: fixed;
 }
-.content {
+
+.landing-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  width: 100vw;
- top: 100px;
-  backdrop-filter: blur(4px);
-  background-color: rgba(0,0,0,0.5);
-  gap: 20px;
+  width: 100%;
+  padding: 2rem;
 }
 
-.landing_content {
- margin-top: 430px;
-  margin-left: 100px;
-  transform: translate(-50%, -50%);
-  z-index: 1;
+.landing-overlay {
   text-align: center;
-  /* background-color: red; */
-  width: 400px;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  gap: 10px;
+  max-width: 720px;
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 18px;
+  backdrop-filter: blur(4px);
 }
 
-.content p,
-.content h1 {
-  color: white;
-}
-
-.content h1 {
-  font-size: 48px;
-  margin-bottom: 10px;
-}
-
-.content p {
-  font-size: 25px;
+.company-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+  margin-bottom: 0.5rem;
 }
 
 .divider {
-  width: 50px;
-  height: 2px;
-  background-color: #4caf50;
-  margin: 10px 0;
+  width: 60px;
+  height: 3px;
+  background: #52b788;
+  margin: 1rem auto 1.5rem;
+  border-radius: 2px;
 }
 
+/* ── About Us ── */
+.about-us-container {
+  margin-bottom: 2rem;
+}
+
+.about-us-description {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.82);
+  text-align: center;
+}
+
+.about-us-description strong {
+  color: #b7e4c7;
+}
+
+/* ── Get Started Button ── */
 .get-started-button {
-  padding: 15px 25px;
-  font-size: 23px;
-  border: none;
-  border-radius: 5px;
-  background-color: #4caf50;
+  background-color: #4CAF50;
   color: white;
+  padding: 14px 36px;
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 50px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 40px;
+  transition: background-color 0.25s, transform 0.2s, box-shadow 0.25s;
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.45);
 }
 
 .get-started-button:hover {
-  background-color: #45a049;
+  background-color: #388E3C;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(76, 175, 80, 0.55);
 }
 
-/* ProductList.css */
+/* Checkout button variant */
+.get-started-button1 {
+  background-color: #2d6a4f;
+  color: white;
+  padding: 14px 36px;
+  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.25s, transform 0.2s;
+  box-shadow: 0 6px 20px rgba(45, 106, 79, 0.4);
+}
 
-.product-list-container {
-  position: absolute;
-  overflow-x: hidden;
-  top: 100vh;
-  /* Initially off-screen */
-  left: 0;
+.get-started-button1:hover {
+  background-color: #1a3a2a;
+  transform: translateY(-2px);
+}
+
+/* ── Luxury Heading (Navbar brand) ── */
+.luxury-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #b7e4c7;
+  letter-spacing: 0.02em;
+}
+
+/* ── Product Grid ── */
+.product-grid {
+  padding: 2rem;
+  background-color: #f4f9f4;
+  min-height: 100vh;
+}
+
+.product-grid h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #1a3a2a;
+  margin: 2rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #52b788;
+  display: inline-block;
+}
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.product-card {
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(26, 58, 42, 0.12);
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.22s, box-shadow 0.22s;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(26, 58, 42, 0.18);
+}
+
+.product-image {
   width: 100%;
-  height: 100vh;
-  background-color: rgba(255, 255, 255, 0.9);
-  /* Adjust background opacity as needed */
-  transition: top 0.5s ease;
-  /* Smooth transition for top property */
-  overflow-y: auto;
-  /* Enable vertical scrolling */
-  z-index: 2;
-  /* Ensure it's above landing page content */
-  backdrop-filter: blur(5px);
+  height: 160px;
+  object-fit: cover;
 }
 
-.product-list-container.visible {
-  top: 0;
-}
-/* LandingPage.css */
-@media screen and (max-width: 768px) {
-  .content {
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-  }
-
-  .landing_content {
-    margin-top: 100px; /* Adjust as needed */
-    margin-left: 0;
-    width: 80%; /* Adjust as needed */
-    text-align: center;
-  }
-
-  .aboutus_container {
-    margin-top: 20px; /* Adjust as needed */
-    width: 80%; /* Adjust as needed */
-  }
+.product-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a3a2a;
+  padding: 0.7rem 1rem 0.2rem;
 }
 
-@media screen and (max-width: 480px) {
-  .landing_content {
-    margin-top: 50px; /* Adjust as needed */
-    width: 90%; /* Adjust as needed */
-  }
+.product-description {
+  font-size: 0.8rem;
+  color: #6b8f71;
+  padding: 0 1rem;
+  line-height: 1.5;
+  flex: 1;
+}
 
-  .aboutus_container {
-    width: 90%; /* Adjust as needed */
-  }
+.product-cost {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2d6a4f;
+  padding: 0.4rem 1rem;
+}
+
+.product-button {
+  margin: 0.5rem 1rem 1rem;
+  padding: 0.5rem 0;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: calc(100% - 2rem);
+}
+
+.product-button:hover:not(:disabled) {
+  background-color: #388E3C;
+}
+
+.product-button:disabled {
+  background-color: #a5c9a7;
+  cursor: not-allowed;
+}
+
+/* ── Cart icon ── */
+.cart {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.cart_quantity_count {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background-color: #e53935;
+  color: white;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
 }
